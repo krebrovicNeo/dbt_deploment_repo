@@ -157,7 +157,7 @@ SELECT 'PDMS'                                                                   
               LEFT OUTER JOIN derived_datasets.v_pdms_account_partnership_attributes x
                               ON x.account_id = a.id
 
-              LEFT OUTER JOIN sfdc_silver.mv_product2 p
+              LEFT OUTER JOIN {{ ref('Product2') }} p
                               ON li.product2id = p.id
                                   AND p.isdeleted = 0
 
